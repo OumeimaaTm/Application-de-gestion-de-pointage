@@ -1,0 +1,27 @@
+<div class="d-flex flex-row bd-highlight mb-3">
+
+  <div class="form-froup row" style="width: 60%;">
+    <label class="col-sm-2 col-form-label">Numéro</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="PorteNum"
+        placeholder="Entrer le numéro de porte">
+    </div>
+
+    <label class="col-sm-2 col-form-label">Accés</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="Access"
+        placeholder="donner l'accés">
+    </div>
+
+  </div>
+
+</div>
+
+
+<button (click)="addPorte()" *ngIf="porte.PorteNum==0" class="btn btn-primary">
+  Ajouter
+</button>
+
+<button (click)="updatePorte()" *ngIf="porte.PorteNum!=0" class="btn btn-primary">
+  Modifier
+</button>

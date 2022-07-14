@@ -1,0 +1,46 @@
+<div class="form-froup row">
+
+    <label class="col-sm-2 col-form-label">Réference</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="Reference"
+        placeholder="Entrer la réference ">
+    </div>
+
+    <label class="col-sm-2 col-form-label">Nom de device</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="DeviceName"
+        placeholder="Entrer le nom de device">
+    </div>
+
+    <label class="col-sm-2 col-form-label">Détails</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="Details"
+        placeholder="Entrer les détails de device">
+    </div>
+
+    <label class="col-sm-2 col-form-label">Date dl'installation</label>
+    <div class="col-sm-10">
+        <input type="date"  [(ngModel)]="DateOfInstall">
+    </div>
+
+    <label class="col-sm-2 col-form-label">Etat</label>
+   <div class="col-sm-10">
+      <input type="text" class="form-control" [(ngModel)]="Etat"
+      placeholder="Entrer l'état de device">
+  </div>
+
+  <label class="col-sm-2 col-form-label">Localisation</label>
+   <div class="col-sm-10">
+      <input type="text" class="form-control" [(ngModel)]="Location"
+      placeholder="Entrer l'emplacement de  device">
+  </div>
+
+</div>
+
+<button (click)="addDevice()" *ngIf="device.DeviceNum==0" class="btn btn-primary">
+  Ajouter
+</button>
+
+<button (click)="updateDevice()" *ngIf="device.DeviceNum!=0" class="btn btn-primary">
+  Modifier
+</button>

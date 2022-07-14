@@ -1,0 +1,145 @@
+<div class="container p-5">
+  <div class="text-center mb-2" data-aos="zoom-out-down">
+    <button
+      type="button"
+      (click)="statusModal.show()"
+      
+      type="button"
+      class="btn btn-primary">
+      <h3 style="color: rgb(255, 255, 255)" > Bienvenue Admin </h3>
+    </button>
+    
+  </div>
+  <div class="row" *ngIf="authenticated" data-aos="zoom-out-down">
+    <div class="col-md-6" style="margin: auto">
+      <mdb-card>
+        <mdb-card-img
+          src="/assets/images/tactic1.png"
+          style="display: block ; margin-left: auto; margin-right: auto; width: 60% ;" 
+        
+          alt="crud_image"
+        ></mdb-card-img>
+        <mdb-card-body>
+          <mdb-card-text style="size:110%"> Bienvenue Admin 😁 </mdb-card-text>
+            <a mdbBtn color="primary" routerLink="/dashboard" mdbWavesEffect>
+              Ouvrir l'Application <mdb-icon fas icon="rocket"></mdb-icon>
+             </a>
+          </mdb-card-body>
+        </mdb-card>
+    </div>
+  </div>
+  <div class="row" *ngIf="!authenticated">
+    <div class="col-md mb-2">
+      <mdb-card data-aos="fade-right">
+        <mdb-card-body>
+          <mdb-card-title>
+            <h4>Connecter</h4>
+          </mdb-card-title>
+          <img src="/assets/images/login.png" alt="" width="100%" />
+          <mdb-card-text>Vous avez déjà un compte ?</mdb-card-text>
+          <a
+            routerLink="/login"
+            mdbBtn
+            type="button"
+            color="danger"
+            mdbWavesEffect
+            ><mdb-icon fas icon="chevron-circle-right"></mdb-icon> Go</a
+          >
+        </mdb-card-body>
+      </mdb-card>
+    </div>
+
+    <div class="col-md">
+      <mdb-card data-aos="fade-left">
+        <mdb-card-body>
+          <mdb-card-title>
+            <h4>S'inscrire</h4>
+          </mdb-card-title>
+          <img src="/assets/images/register.png" alt="" width="90%" />
+          <mdb-card-text>Vous n'avez pas encore de compte ?</mdb-card-text>
+          <a
+            routerLink="/register"
+            mdbBtn
+            type="button"
+            color="indigo"
+            mdbWavesEffect
+            class="rounded"
+            ><mdb-icon fas icon="chevron-circle-right"></mdb-icon> Go</a
+          >
+        </mdb-card-body>
+      </mdb-card>
+    </div>
+  </div>
+
+  <div
+    mdbModal
+    #statusModal="mdbModal"
+    class="modal fade right"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="myBasicModalLabel"
+    [config]="{ backdrop: false, ignoreBackdropClick: true }"
+    aria-hidden="true"
+  >
+    <div
+      class="modal-dialog modal-sm modal-side modal-bottom-right"
+      role="document"
+    >
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title w-100">utilisateur </h4>
+        </div>
+        <div class="modal-body">
+          <ul class="list-group">
+            <li class="list-group-item">
+              <span class="indigo-text"
+                ><mdb-icon class="indigo-text" fas icon="user-lock"></mdb-icon>
+                Authentifié:</span
+              >
+              {{ authenticated }}
+            </li>
+            <div *ngIf="authenticated">
+              <li class="list-group-item">
+                <span class="indigo-text"
+                  ><mdb-icon class="indigo-text" fas icon="key"></mdb-icon>
+                  Accéder</span
+                >
+                : verifié
+                <mdb-icon class="green-text" fas icon="check-square"></mdb-icon>
+              </li>
+              <li class="list-group-item">
+                <span class="indigo-text"
+                  ><mdb-icon class="indigo-text" fas icon="key"></mdb-icon>
+                  actualiser</span
+                >
+                : verifié
+                <mdb-icon class="green-text" fas icon="check-square"></mdb-icon>
+              </li>
+              <li class="list-group-item">
+                <span class="indigo-text"
+                  ><mdb-icon class="indigo-text" fas icon="clock"></mdb-icon>
+                  Expiré</span
+                >
+                : inexact 😁
+              </li>
+            </div>
+          </ul>
+        </div>
+        <div class="modal-footer justify-content-center">
+          <button
+            type="button"
+            mdbBtn
+            color="danger"
+            class="waves-light"
+            aria-label="Close"
+            (click)="statusModal.hide()"
+            mdbWavesEffect
+          >
+            <mdb-icon fas icon="window-close"></mdb-icon> Fermer
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

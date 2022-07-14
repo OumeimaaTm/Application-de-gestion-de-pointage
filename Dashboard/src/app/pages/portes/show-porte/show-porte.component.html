@@ -1,0 +1,162 @@
+
+<div class="header bg-gradient-primary py-7 py-lg-8">
+  <div class="container-fluid">
+    <div class="header-body">
+      <div class="row justify-content-center">   
+        <div class="separator separator-bottom separator-skew zindex-100">
+          <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <polygon class="fill-default" points="2560 0 2560 100 0 100"></polygon>
+          </svg>
+        </div>
+      </div>
+      
+      <h1 class="row justify-content-center"> Contrôle d'accés</h1> 
+
+
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container-fluid mt--7">
+  <div class="row">
+      <div class="col">
+        <div class="card shadow border-0">
+          <div class="Porte" ><img src="../assets/img/theme/plan.PNG" ></div>
+      </div>
+    </div>
+
+
+
+    <div class="col">
+      <div class="card shadow border-0">
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">{{ModalTitle}}</h5>
+                <button type="button" class="close" 
+                data-dismiss="modal" aria-label="Close"
+                (click)="closeClick()" >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                  <app-add-porte [porte]="porte" *ngIf="ActivateAddEditPorteComp"></app-add-porte>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <table class="table align-items-center table-dark table-flush">
+          <thead class="thead-dark">
+            <tr >
+              <th scope="col">Employé </th>
+              <th scope="col" > 1 </th>
+              <th scope="col"> 2 </th>
+              <th scope="col"> 3 </th>
+              <th scope="col"> 4 </th>
+              <th scope="col"> 5 </th>
+            </tr>
+          </thead>
+         
+                <tr  *ngFor="let dataItem of PorteList" >
+                  <td>
+                    {{dataItem.EmployeeName}}
+                  </td>
+
+                  <td>
+                    <select name="cars" id="cars" >
+                      <option value="autorisé"> 
+                        <span class="badge badge-dot mr-4">
+                          <i class="bg-success"></i> autorisé
+                      </span>
+                      </option>
+                      <option value="saab">        
+                        <span class="badge badge-dot mr-4">
+                        <i class="bg-warning"></i>non autorisé
+                        </span>
+                      </option>
+                    </select>
+                  </td>
+               
+                  <td>
+                    <select name="cars" id="cars" >
+                      <option value="autorisé"> 
+                        <span class="badge badge-dot mr-4">
+                          <i class="bg-success"></i> autorisé
+                      </span>
+                      </option>
+                      <option value="saab">        
+                        <span class="badge badge-dot mr-4">
+                        <i class="bg-warning"></i>non autorisé
+                        </span>
+                      </option>
+                    </select>
+                  </td>
+                  <td>
+                    <select name="cars" id="cars" >
+                      <option value="autorisé"> 
+                        <span class="badge badge-dot mr-4">
+                          <i class="bg-success"></i> autorisé
+                      </span>
+                      </option>
+                      <option value="saab">        
+                        <span class="badge badge-dot mr-4">
+                        <i class="bg-warning"></i>non autorisé
+                        </span>
+                      </option>
+                    </select>
+                  </td>
+                  <td>
+                    <select name="cars" id="cars" >
+                      <option value="autorisé"> 
+                        <span class="badge badge-dot mr-4">
+                          <i class="bg-success"></i> autorisé
+                      </span>
+                      </option>
+                      <option value="saab">        
+                        <span class="badge badge-dot mr-4">
+                        <i class="bg-warning"></i>non autorisé
+                        </span>
+                      </option>
+                    </select>
+                  </td>
+                  <td>
+                    <select name="cars" id="cars" >
+                      <option value="autorisé"> 
+                        <span class="badge badge-dot mr-4">
+                          <i class="bg-success"></i> autorisé
+                      </span>
+                      </option>
+                      <option value="saab">        
+                        <span class="badge badge-dot mr-4">
+                        <i class="bg-warning"></i>non autorisé
+                        </span>
+                      </option>
+                    </select>
+                  </td>
+               
+                </tr>
+              
+        </table>
+
+
+          <button type="button" class="btn btn-primary float-right m-2" 
+            data-toggle="modal" data-target="#exampleModal"
+            (click)="addClick()"
+            data-backdrop="static" data-keyboard="false">
+            Ajouter
+          </button>
+
+
+
+        </div>
+    </div>
+  </div>
+</div>
